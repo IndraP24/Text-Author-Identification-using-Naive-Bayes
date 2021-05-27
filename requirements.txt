@@ -1,0 +1,13 @@
+beautifulsoup4
+numpy
+pandas
+scikit-learn
+scipy
+flasgger
+Flask
+gunicorn
+itsdangerous
+Jinja2
+MarkupSafe
+Werkzeug
+requests
