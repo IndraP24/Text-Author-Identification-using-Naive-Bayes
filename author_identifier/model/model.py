@@ -1,3 +1,6 @@
+import sys
+sys.path.append('D:\Projects\All Projects\Text-Author-Identification-using-Naive-Bayes')
+
 from author_identifier.util import utils
 
 class model:
