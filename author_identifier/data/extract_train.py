@@ -45,5 +45,5 @@ all_dialogues = captain_dialogues + stark_dialogues
 target_variable = ["Captain America"] * len(captain_dialogues) + ["Iron Man"] * len(stark_dialogues)
 
 df = pd.DataFrame({"Dialogue": all_dialogues, "Speaker": target_variable})
-df.to_csv("../../data/data.csv", index = False)
-print("File is saved in data folder!")
+df.to_csv("../../data/train.csv", index = False)
+print("Train file is saved under the data folder!")
