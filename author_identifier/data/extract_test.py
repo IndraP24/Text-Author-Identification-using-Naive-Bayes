@@ -27,5 +27,5 @@ for dialogue in endgameDialogues:
             endgame_dialogues.append([dialg, "Captain America"])
             
 df = pd.DataFrame(endgame_dialogues, columns = ["Dialogue", "Speaker"])
-df.to_csv("../Data/test.csv", index = False)
+df.to_csv("../../data/test.csv", index = False)
 print("File is saved in Data folder!")
