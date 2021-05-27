@@ -58,7 +58,7 @@ probabilities["xxunk"]["lambda"] = np.log(probabilities["xxunk"]["Stark"] / prob
 model_artifact = {"probabilites": probabilities,
                   "log_prior": log_prior}
 
-with open("model_artifact.pkl", "wb") as f:
+with open("../artifacts/text_author_identifier/model_artifact.pkl", "wb") as f:
     pickle.dump(model_artifact, f)
     f.close()
 
@@ -67,12 +67,12 @@ predictions = []
 for sentence in data.Dialogue:
     predictions.append(model.predict(str(sentence), probabilities, log_prior))
 
-print(accuracy_score([x[0] for x in predictions], data.Speaker))
+print("Training Accuray Score: ", accuracy_score([x[0] for x in predictions], data.Speaker))
 
 # Infer on test dataset (i.e. script of Avengers: Endgame)
-test_data = pd.read_csv("test.csv")
+test_data = pd.read_csv("../../data/test.csv")
 predictions = []
 for sentence in test_data.Dialogue:
     predictions.append(model.predict(str(sentence), probabilities, log_prior))
 
-print(accuracy_score([x[0] for x in predictions], test_data.Speaker))
+print("Testing Accuray Score: ", accuracy_score([x[0] for x in predictions], test_data.Speaker))
