@@ -1,5 +1,5 @@
 import sys
-sys.path.append('D:\Projects\All Projects\Text-Author-Identification-using-Naive-Bayes')
+sys.path.append('/home/indrap24/Desktop/Projects/All Projects/Text-Author-Identification-using-Naive-Bayes')
 
 from author_identifier.util import utils
 from author_identifier.model.nb_model import model
