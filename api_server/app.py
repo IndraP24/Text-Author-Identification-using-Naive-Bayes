@@ -6,9 +6,11 @@ import pickle
 import sys
 sys.path.append('/home/indrap24/Desktop/Projects/All Projects/Text-Author-Identification-using-Naive-Bayes')
 from author_identifier.util import *
+from author_identifier.model.nb_model import *
+from author_identifier.artifacts.text_author_identifier import *
 
 
-with open("../author_identifier/artifacts/text_author_identifier/model_artifact.pkl", "rb") as f:
+with open("/repo/author_identifier/artifacts/text_author_identifier/model_artifact.pkl", "rb") as f:
     model_artifact = pickle.load(f)
     f.close()
 
@@ -35,6 +37,9 @@ def predict_dialogue():
         
     """
     text = request.args.get("text")
-    prediction = utils.predict(str(text), model_artifact["probabilites"], model_artifact["log_prior"])
+    prediction = model.predict(str(text), model_artifact["probabilites"], model_artifact["log_prior"])
 
     return f"This dialogue is more likely to have come from {prediction[0]}."
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=8000)
